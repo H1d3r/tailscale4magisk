@@ -20,7 +20,7 @@ jobs:
         env:
           DATE: ${{ steps.date.outputs.date }}
         run: |
-          echo "tag_name=${{ github.ref_name }}_$${{ github.head_ref || github.run_id }}_${{DATE}}" >> $GITHUB_ENV
+          echo "tag_name=${{ github.ref_name }}_$${{ github.head_ref || github.run_id }}_${DATE}" >> $GITHUB_ENV
 
       - name: 安装 NDK
         uses: nttld/setup-ndk@v1
