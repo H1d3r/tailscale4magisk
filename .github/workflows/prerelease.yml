@@ -20,7 +20,7 @@ jobs:
         env:
           DATE: ${{ steps.date.outputs.date }}
         run: |
-          echo "tag_name=${{ github.ref_name }}_$${{ github.head_ref || github.run_id }}_${DATE}" >> $GITHUB_ENV
+          echo "tag_name=${{ github.ref_name }}_$${{ github.head_ref}}_${DATE}" >> $GITHUB_ENV
 
       - name: 安装 NDK
         uses: nttld/setup-ndk@v1
@@ -62,7 +62,7 @@ jobs:
         if: ${{ success() }}
         with:
           tag: Prerelease
-          tag_name: ${{ env.tag_name }}
-          files: tailscale4Magisk_*.zip
+          tag_name: Prerelease
+          files: tailscale_*.zip
           prerelease: true
           generate_release_notes: true
