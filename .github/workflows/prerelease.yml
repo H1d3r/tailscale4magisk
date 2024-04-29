@@ -4,6 +4,10 @@ on:
   push:
     tags:
       - "b*"
+  schedule:
+    - cron: "15 14 */7 * *" # 8am EST / 10am PST / 12pm UTC
+  workflow_dispatch: # allow manual trigger for testing
+  
 
 jobs:
   build:
