@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - name: 设置 tag_name
         env:
@@ -61,7 +61,7 @@ jobs:
         uses: softprops/action-gh-release@v1
         if: ${{ success() }}
         with:
-          tag: Prerelease
+         # tag: Prerelease
           tag_name: Prerelease
           files: tailscale_*.zip
           prerelease: true
